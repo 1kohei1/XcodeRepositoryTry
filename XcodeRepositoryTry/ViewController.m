@@ -26,4 +26,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)activateCamera:(id)sender {
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType]) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+        picker.sourceType = sourceType;
+        picker.delegate = self;
+        [self presentViewController:picker animated:NO completion:nil];
+    }
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+}
+
+- (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+
+}
+
 @end
