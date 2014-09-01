@@ -13,4 +13,7 @@
 
 }
 
+@property AVCaptureVideoPreviewLayer *previewLayer;
+@property AVCaptureSession *captureSession;
+
 @end
