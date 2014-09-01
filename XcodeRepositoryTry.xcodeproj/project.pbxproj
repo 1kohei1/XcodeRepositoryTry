@@ -11,6 +11,8 @@
 		19B4C57219B4B4EA009AD5DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */; };
 		19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */; };
 		19B4C57819B4BAAD009AD5DD /* AROverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B4C57719B4BAAD009AD5DD /* AROverlayViewController.m */; };
+		19B4C57B19B4C303009AD5DD /* overlaygraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B4C57919B4C303009AD5DD /* overlaygraphic.png */; };
+		19B4C57C19B4C303009AD5DD /* scanbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B4C57A19B4C303009AD5DD /* scanbutton.png */; };
 		19CD1F3D19A67CBF00E8C70F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F3C19A67CBF00E8C70F /* Foundation.framework */; };
 		19CD1F3F19A67CBF00E8C70F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F3E19A67CBF00E8C70F /* CoreGraphics.framework */; };
 		19CD1F4119A67CBF00E8C70F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F4019A67CBF00E8C70F /* UIKit.framework */; };
@@ -44,6 +46,8 @@
 		19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		19B4C57619B4BAAD009AD5DD /* AROverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AROverlayViewController.h; sourceTree = "<group>"; };
 		19B4C57719B4BAAD009AD5DD /* AROverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AROverlayViewController.m; sourceTree = "<group>"; };
+		19B4C57919B4C303009AD5DD /* overlaygraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlaygraphic.png; sourceTree = "<group>"; };
+		19B4C57A19B4C303009AD5DD /* scanbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanbutton.png; sourceTree = "<group>"; };
 		19CD1F3919A67CBF00E8C70F /* XcodeRepositoryTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodeRepositoryTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19CD1F3C19A67CBF00E8C70F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19CD1F3E19A67CBF00E8C70F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -144,6 +148,8 @@
 		19CD1F4319A67CBF00E8C70F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				19B4C57919B4C303009AD5DD /* overlaygraphic.png */,
+				19B4C57A19B4C303009AD5DD /* scanbutton.png */,
 				19CD1F4419A67CBF00E8C70F /* XcodeRepositoryTry-Info.plist */,
 				19CD1F4519A67CBF00E8C70F /* InfoPlist.strings */,
 				19CD1F4819A67CBF00E8C70F /* main.m */,
@@ -246,7 +252,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B4C57C19B4C303009AD5DD /* scanbutton.png in Resources */,
 				19CD1F5519A67CBF00E8C70F /* Images.xcassets in Resources */,
+				19B4C57B19B4C303009AD5DD /* overlaygraphic.png in Resources */,
 				19CD1F4719A67CBF00E8C70F /* InfoPlist.strings in Resources */,
 				19CD1F5019A67CBF00E8C70F /* Main.storyboard in Resources */,
 			);
