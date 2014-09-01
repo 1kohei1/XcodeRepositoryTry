@@ -63,7 +63,12 @@
 }
 
 - (void)scanButtonPressed {
-    
+    [[self scanningLabel] setHidden:NO];
+    [self performSelector:@selector(hideLabel:) withObject:[self scanningLabel] afterDelay:2];
+}
+
+- (void)hideLabel:(UILabel *)label {
+    [label setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
