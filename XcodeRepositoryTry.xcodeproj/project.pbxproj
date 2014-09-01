@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19B4C57019B4B4DF009AD5DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */; };
+		19B4C57219B4B4EA009AD5DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */; };
+		19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */; };
 		19CD1F3D19A67CBF00E8C70F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F3C19A67CBF00E8C70F /* Foundation.framework */; };
 		19CD1F3F19A67CBF00E8C70F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F3E19A67CBF00E8C70F /* CoreGraphics.framework */; };
 		19CD1F4119A67CBF00E8C70F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F4019A67CBF00E8C70F /* UIKit.framework */; };
@@ -34,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		19B4C57319B4B553009AD5DD /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		19CD1F3919A67CBF00E8C70F /* XcodeRepositoryTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodeRepositoryTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19CD1F3C19A67CBF00E8C70F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19CD1F3E19A67CBF00E8C70F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B4C57219B4B4EA009AD5DD /* AVFoundation.framework in Frameworks */,
+				19B4C57019B4B4DF009AD5DD /* CoreMedia.framework in Frameworks */,
 				19CD1F3F19A67CBF00E8C70F /* CoreGraphics.framework in Frameworks */,
 				19CD1F4119A67CBF00E8C70F /* UIKit.framework in Frameworks */,
 				19CD1F3D19A67CBF00E8C70F /* Foundation.framework in Frameworks */,
@@ -101,6 +110,8 @@
 		19CD1F3B19A67CBF00E8C70F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */,
+				19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */,
 				19CD1F3C19A67CBF00E8C70F /* Foundation.framework */,
 				19CD1F3E19A67CBF00E8C70F /* CoreGraphics.framework */,
 				19CD1F4019A67CBF00E8C70F /* UIKit.framework */,
@@ -115,6 +126,8 @@
 				19CD1F4B19A67CBF00E8C70F /* AppDelegate.h */,
 				19CD1F4C19A67CBF00E8C70F /* AppDelegate.m */,
 				19CD1F4E19A67CBF00E8C70F /* Main.storyboard */,
+				19B4C57319B4B553009AD5DD /* CaptureSessionManager.h */,
+				19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */,
 				19CD1F5119A67CBF00E8C70F /* ViewController.h */,
 				19CD1F5219A67CBF00E8C70F /* ViewController.m */,
 				19CD1F5419A67CBF00E8C70F /* Images.xcassets */,
@@ -250,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19CD1F5319A67CBF00E8C70F /* ViewController.m in Sources */,
+				19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */,
 				19CD1F4D19A67CBF00E8C70F /* AppDelegate.m in Sources */,
 				19CD1F4919A67CBF00E8C70F /* main.m in Sources */,
 			);
@@ -456,6 +470,7 @@
 				19CD1F6D19A67CBF00E8C70F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19CD1F6E19A67CBF00E8C70F /* Build configuration list for PBXNativeTarget "XcodeRepositoryTryTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +479,7 @@
 				19CD1F7019A67CBF00E8C70F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
