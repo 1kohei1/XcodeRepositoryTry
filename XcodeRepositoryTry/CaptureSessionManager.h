@@ -13,7 +13,10 @@
 
 }
 
-@property AVCaptureVideoPreviewLayer *previewLayer;
-@property AVCaptureSession *captureSession;
+@property (retain) AVCaptureVideoPreviewLayer *previewLayer;
+@property (retain) AVCaptureSession *captureSession;
+
+-(void) addVideoPreviewLayer;
+-(void) addVIdeoInput;
 
 @end
