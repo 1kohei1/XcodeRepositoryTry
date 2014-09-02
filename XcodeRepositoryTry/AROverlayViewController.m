@@ -29,13 +29,15 @@
     
     // Set up capture manager
     [self setCaptureManager:[[CaptureSessionManager alloc] init]];
-    [[self captureManager] addVIdeoInput];
-    
-    [[self captureManager] addVideoPreviewLayer];
+
+    [[self captureManager] setVideoPreviewLayer];
     CGRect layerRect = [[[self view] layer]bounds];
     [[[self captureManager] previewLayer] setBounds:layerRect];
     [[[self captureManager] previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
     [[[self view] layer] addSublayer:[[self captureManager] previewLayer]];
+    
+    [[self captureManager] setVideoInput];
+    [[self captureManager] setVideoOutput];
     
     // Set up overlay image
     UIImageView *overlayImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"overlaygraphic.png"]];
@@ -59,6 +61,20 @@
     [self setScanningLabel:tempLabel];
     [[self view] addSubview:[self scanningLabel]];
     
+    // Set up overlay label
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+    label.text = @"";
+    label.textColor = [UIColor redColor];
+    label.backgroundColor = [UIColor clearColor];
+    self.photoMsg = label;
+    [self.view addSubview:self.photoMsg];
+    
+    // Capture screen touch
+    UIButton *screenTouch = [UIButton buttonWithType:UIButtonTypeCustom];
+    screenTouch.frame = self.view.frame;
+    [screenTouch addTarget:self action:@selector(screenTouched:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:screenTouch];
+    
     [[[self captureManager] captureSession] startRunning];
 }
 
@@ -69,6 +85,13 @@
 
 - (void)hideLabel:(UILabel *)label {
     [label setHidden:YES];
+}
+
+- (void)screenTouched:(UIButton *)button {
+    [self.captureManager screenTouched];
+    
+    // It depends on user setting if the user wants to take a picture or focus.
+    // self.photoMsg.text = @"photo taken";
 }
 
 - (void)didReceiveMemoryWarning
