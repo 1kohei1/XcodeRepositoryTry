@@ -13,16 +13,23 @@
 
 @property (retain) AVCaptureSession *captureSession;
 @property (retain) AVCaptureVideoPreviewLayer *previewLayer;
-@property (retain) AVCaptureVideoDataOutput *videoOutput;
 
 // Configuration
 
+- (BOOL)setDevice;
+- (BOOL)setVideoInput;
+- (BOOL)setVideoOutput;
+- (BOOL)setVideoOrientation;
+- (void)setVideoPreviewLayer:(CGRect)layerRect;
+
+/*
+- (void)setCaptureConnection;
 - (void)setVideoPreviewLayer;
 - (void)setVideoInput;
 - (void)setVideoOutput;
-
+*/
 // Methods
 
-- (void)screenTouched;
+- (UIImage *)returnCapturedImg;
 
 @end
