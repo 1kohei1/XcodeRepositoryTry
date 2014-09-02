@@ -13,6 +13,7 @@
 		19B4C57819B4BAAD009AD5DD /* AROverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B4C57719B4BAAD009AD5DD /* AROverlayViewController.m */; };
 		19B4C57B19B4C303009AD5DD /* overlaygraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B4C57919B4C303009AD5DD /* overlaygraphic.png */; };
 		19B4C57C19B4C303009AD5DD /* scanbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B4C57A19B4C303009AD5DD /* scanbutton.png */; };
+		19B4C58019B4EC1A009AD5DD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C57F19B4EC1A009AD5DD /* ImageIO.framework */; };
 		19CD1F3D19A67CBF00E8C70F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F3C19A67CBF00E8C70F /* Foundation.framework */; };
 		19CD1F3F19A67CBF00E8C70F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F3E19A67CBF00E8C70F /* CoreGraphics.framework */; };
 		19CD1F4119A67CBF00E8C70F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F4019A67CBF00E8C70F /* UIKit.framework */; };
@@ -48,6 +49,8 @@
 		19B4C57719B4BAAD009AD5DD /* AROverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AROverlayViewController.m; sourceTree = "<group>"; };
 		19B4C57919B4C303009AD5DD /* overlaygraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlaygraphic.png; sourceTree = "<group>"; };
 		19B4C57A19B4C303009AD5DD /* scanbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanbutton.png; sourceTree = "<group>"; };
+		19B4C57D19B4EB4E009AD5DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		19B4C57F19B4EC1A009AD5DD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		19CD1F3919A67CBF00E8C70F /* XcodeRepositoryTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodeRepositoryTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19CD1F3C19A67CBF00E8C70F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19CD1F3E19A67CBF00E8C70F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B4C58019B4EC1A009AD5DD /* ImageIO.framework in Frameworks */,
 				19B4C57219B4B4EA009AD5DD /* AVFoundation.framework in Frameworks */,
 				19B4C57019B4B4DF009AD5DD /* CoreMedia.framework in Frameworks */,
 				19CD1F3F19A67CBF00E8C70F /* CoreGraphics.framework in Frameworks */,
@@ -117,6 +121,8 @@
 		19CD1F3B19A67CBF00E8C70F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19B4C57F19B4EC1A009AD5DD /* ImageIO.framework */,
+				19B4C57D19B4EB4E009AD5DD /* QuartzCore.framework */,
 				19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */,
 				19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */,
 				19CD1F3C19A67CBF00E8C70F /* Foundation.framework */,
@@ -407,6 +413,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XcodeRepositoryTry/XcodeRepositoryTry-Prefix.pch";
 				INFOPLIST_FILE = "XcodeRepositoryTry/XcodeRepositoryTry-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -420,6 +431,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XcodeRepositoryTry/XcodeRepositoryTry-Prefix.pch";
 				INFOPLIST_FILE = "XcodeRepositoryTry/XcodeRepositoryTry-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
