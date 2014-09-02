@@ -12,7 +12,5 @@
 @interface AROverlayViewController : UIViewController
 
 @property (retain) CaptureSessionManager *captureManager;
-@property (nonatomic, retain) UILabel *scanningLabel;
-@property (nonatomic, weak) UILabel *photoMsg;
 
 @end

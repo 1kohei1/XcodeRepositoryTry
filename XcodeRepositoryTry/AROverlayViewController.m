@@ -28,70 +28,42 @@
     [super viewDidLoad];
     
     // Set up capture manager
-    [self setCaptureManager:[[CaptureSessionManager alloc] init]];
+    self.captureManager = [[CaptureSessionManager alloc]init];
+    if (![self.captureManager setDevice]) return; // Do error handling
+    if (![self.captureManager setVideoInput]) return; // Do error handling
+    if (![self.captureManager setVideoOutput]) return; // Do error handling
+    if (![self.captureManager setVideoOrientation]) return; // Do error handling
+    [self.captureManager setVideoPreviewLayer:self.view.layer.bounds];
+    [self.view.layer addSublayer:self.captureManager.previewLayer];
 
-    [[self captureManager] setVideoPreviewLayer];
-    CGRect layerRect = [[[self view] layer]bounds];
-    [[[self captureManager] previewLayer] setBounds:layerRect];
-    [[[self captureManager] previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
-    [[[self view] layer] addSublayer:[[self captureManager] previewLayer]];
-    
-    [[self captureManager] setVideoInput];
-    [[self captureManager] setVideoOutput];
-    
-    // Set up overlay image
-    UIImageView *overlayImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"overlaygraphic.png"]];
-    [overlayImageView setFrame:CGRectMake(30, 100, 260, 200)];
-    [[self view] addSubview:overlayImageView];
-    
-    // Set up overlay buttons
-    UIButton *overlayButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [overlayButton setImage:[UIImage imageNamed:@"scanbutton.png"] forState:UIControlStateNormal];
-    [overlayButton setFrame:CGRectMake(130, 320, 60, 30)];
-    [overlayButton addTarget:self action:@selector(scanButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [[self view] addSubview:overlayButton];
-    
-    // Set up overlay scannning
-    UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 120, 30)];
-    [tempLabel setBackgroundColor:[UIColor clearColor]];
-    [tempLabel setFont:[UIFont fontWithName:@"Courier" size:18.0]];
-    [tempLabel setTextColor:[UIColor redColor]];
-    [tempLabel setText: @"Scanning..."];
-    [tempLabel setHidden:YES];
-    [self setScanningLabel:tempLabel];
-    [[self view] addSubview:[self scanningLabel]];
-    
-    // Set up overlay label
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
-    label.text = @"";
-    label.textColor = [UIColor redColor];
-    label.backgroundColor = [UIColor clearColor];
-    self.photoMsg = label;
-    [self.view addSubview:self.photoMsg];
-    
     // Capture screen touch
-    UIButton *screenTouch = [UIButton buttonWithType:UIButtonTypeCustom];
-    screenTouch.frame = self.view.frame;
-    [screenTouch addTarget:self action:@selector(screenTouched:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:screenTouch];
+    [self captureScreenTouch];
     
     [[[self captureManager] captureSession] startRunning];
 }
 
-- (void)scanButtonPressed {
-    [[self scanningLabel] setHidden:NO];
-    [self performSelector:@selector(hideLabel:) withObject:[self scanningLabel] afterDelay:2];
-}
-
-- (void)hideLabel:(UILabel *)label {
-    [label setHidden:YES];
+- (void)captureScreenTouch {
+    /*
+     Read setting class and change value of userinteractionenable by user setting.
+     YES => capture image when screen touched
+     NO  => focus touched area
+     */
+    UIButton *screenTouch = [UIButton buttonWithType:UIButtonTypeCustom];
+    screenTouch.frame = self.view.frame;
+    screenTouch.userInteractionEnabled = YES; // This value changes by user setting
+    [screenTouch addTarget:self action:@selector(screenTouched:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:screenTouch];
 }
 
 - (void)screenTouched:(UIButton *)button {
-    [self.captureManager screenTouched];
+    /*
+    UIImage *capturedImg = [self.captureManager returnCapturedImg];
+
+    UIImageView *imageview = [[UIImageView alloc]initWithFrame:self.view.frame];
+    imageview.image = capturedImg;
     
-    // It depends on user setting if the user wants to take a picture or focus.
-    // self.photoMsg.text = @"photo taken";
+    [self.view addSubview:imageview];
+     */
 }
 
 - (void)didReceiveMemoryWarning
