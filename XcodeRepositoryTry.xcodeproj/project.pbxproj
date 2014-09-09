@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194DF6EA19BE95E80073A611 /* ImageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DF6E919BE95E80073A611 /* ImageHandler.m */; };
 		19B4C57019B4B4DF009AD5DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */; };
 		19B4C57219B4B4EA009AD5DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */; };
 		19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */; };
@@ -21,7 +22,6 @@
 		19CD1F4919A67CBF00E8C70F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CD1F4819A67CBF00E8C70F /* main.m */; };
 		19CD1F4D19A67CBF00E8C70F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CD1F4C19A67CBF00E8C70F /* AppDelegate.m */; };
 		19CD1F5019A67CBF00E8C70F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CD1F4E19A67CBF00E8C70F /* Main.storyboard */; };
-		19CD1F5319A67CBF00E8C70F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CD1F5219A67CBF00E8C70F /* ViewController.m */; };
 		19CD1F5519A67CBF00E8C70F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19CD1F5419A67CBF00E8C70F /* Images.xcassets */; };
 		19CD1F5C19A67CBF00E8C70F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F5B19A67CBF00E8C70F /* XCTest.framework */; };
 		19CD1F5D19A67CBF00E8C70F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F3C19A67CBF00E8C70F /* Foundation.framework */; };
@@ -41,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		194DF6E819BE95E80073A611 /* ImageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHandler.h; sourceTree = "<group>"; };
+		194DF6E919BE95E80073A611 /* ImageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHandler.m; sourceTree = "<group>"; };
 		19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		19B4C57319B4B553009AD5DD /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
@@ -62,8 +64,6 @@
 		19CD1F4B19A67CBF00E8C70F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19CD1F4C19A67CBF00E8C70F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		19CD1F4F19A67CBF00E8C70F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		19CD1F5119A67CBF00E8C70F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		19CD1F5219A67CBF00E8C70F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		19CD1F5419A67CBF00E8C70F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		19CD1F5A19A67CBF00E8C70F /* XcodeRepositoryTryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodeRepositoryTryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19CD1F5B19A67CBF00E8C70F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -143,8 +143,8 @@
 				19B4C57719B4BAAD009AD5DD /* AROverlayViewController.m */,
 				19B4C57319B4B553009AD5DD /* CaptureSessionManager.h */,
 				19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */,
-				19CD1F5119A67CBF00E8C70F /* ViewController.h */,
-				19CD1F5219A67CBF00E8C70F /* ViewController.m */,
+				194DF6E819BE95E80073A611 /* ImageHandler.h */,
+				194DF6E919BE95E80073A611 /* ImageHandler.m */,
 				19CD1F5419A67CBF00E8C70F /* Images.xcassets */,
 				19CD1F4319A67CBF00E8C70F /* Supporting Files */,
 			);
@@ -281,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19CD1F5319A67CBF00E8C70F /* ViewController.m in Sources */,
+				194DF6EA19BE95E80073A611 /* ImageHandler.m in Sources */,
 				19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */,
 				19CD1F4D19A67CBF00E8C70F /* AppDelegate.m in Sources */,
 				19CD1F4919A67CBF00E8C70F /* main.m in Sources */,
