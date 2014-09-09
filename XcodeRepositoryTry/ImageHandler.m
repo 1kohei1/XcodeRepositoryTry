@@ -10,4 +10,12 @@
 
 @implementation ImageHandler
 
+- (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer {
+    
+}
+
+- (NSString *)recognizedLettersFromImage:(UIImage *) image {
+    
+}
+
 @end

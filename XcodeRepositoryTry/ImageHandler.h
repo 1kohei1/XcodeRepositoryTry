@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ImageHandler : NSObject
+@interface ImageHandler : NSObject 
+
+- (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer;
+- (NSString *)recognizedLettersFromImage:(UIImage *) image;
 
 @end
