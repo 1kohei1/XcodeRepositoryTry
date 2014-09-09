@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import <CoreImage/CoreImage.h>
+#import <TesseractOCR/TesseractOCR.h>
 
-@interface ImageHandler : NSObject 
+@interface ImageHandler : NSObject <TesseractDelegate>
 
 - (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer;
-- (NSString *)recognizedLettersFromImage:(UIImage *) image;
+- (NSString *)recognizedLettersFromImage:(UIImage *) image setRect:(CGRect)rect;
 
 @end

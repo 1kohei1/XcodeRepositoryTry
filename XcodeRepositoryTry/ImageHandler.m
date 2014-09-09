@@ -8,7 +8,21 @@
 
 #import "ImageHandler.h"
 
-@implementation ImageHandler
+@implementation ImageHandler {
+    Tesseract *tesseractInstance;
+}
+
+- (id)init {
+    if (self == [super init]) {
+        
+    }
+    tesseractInstance = [[Tesseract alloc]initWithLanguage:@"eng"];
+    tesseractInstance.delegate = self;
+    
+    [tesseractInstance setVariableValue:@"0123456789ABCDEFGHIJKLMNOPQRSTUVWabcdefghijklmnopqrstuvwxyz" forKey:@"tessedit_char_whitelist"];
+
+    return self;
+}
 
 - (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer {
     
@@ -50,8 +64,12 @@
     return (image);
 }
 
-- (NSString *)recognizedLettersFromImage:(UIImage *) image {
+- (NSString *)recognizedLettersFromImage:(UIImage *) image setRect:(CGRect)rect {
+    [tesseractInstance setImage:image];
+    [tesseractInstance setRect:rect];
     
+    [tesseractInstance recognize];
+    return tesseractInstance.recognizedText;
 }
 
 @end
