@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+@class AROverlayViewController;
 
 @interface CaptureSessionManager : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (retain) AVCaptureSession *captureSession;
 @property (retain) AVCaptureVideoPreviewLayer *previewLayer;
+@property AROverlayViewController *viewController;
 
 // Configuration
 
@@ -22,12 +24,6 @@
 - (BOOL)setVideoOrientation;
 - (void)setVideoPreviewLayer:(CGRect)layerRect;
 
-/*
-- (void)setCaptureConnection;
-- (void)setVideoPreviewLayer;
-- (void)setVideoInput;
-- (void)setVideoOutput;
-*/
 // Methods
 
 - (UIImage *)returnCapturedImg;

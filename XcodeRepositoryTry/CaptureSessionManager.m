@@ -8,8 +8,7 @@
 
 #import "CaptureSessionManager.h"
 #import <ImageIO/ImageIO.h>
-// #import <dispatch/dispatch.h>
-
+#import "AROverlayViewController.h"
 
 @implementation CaptureSessionManager {
     AVCaptureDevice *device;
@@ -51,7 +50,7 @@
         [device setActiveVideoMinFrameDuration:CMTimeMake(1, 15)];
         [device unlockForConfiguration];
     }
-    
+
     return YES;
 }
 
@@ -73,16 +72,16 @@
     videoOutput = [AVCaptureVideoDataOutput new];
     NSDictionary *newSettings = @{ (NSString *)kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_32BGRA)};
     videoOutput.videoSettings = newSettings;
-    
+
     // discard if the data output queue is blocked (as we process the still image
     videoOutput.alwaysDiscardsLateVideoFrames = YES;
-    
+
     // create a serial dispatch queue used for the sample buffer delegate as well as when a still image is captured
     // a serial dispatch queue must be used to guarantee that video frames will be delivered in order
     // see the header doc for setSampleBufferDelegate:queue: for more information
     dispatch_queue_t videoDataOutputQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL);
     [videoOutput setSampleBufferDelegate:self queue:videoDataOutputQueue];
-    
+
     if ([self.captureSession canAddOutput:videoOutput]) {
         [self.captureSession addOutput:videoOutput];
         return YES;
@@ -92,7 +91,9 @@
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-    
+
+    [self.viewController addLabel];
+
     capturedImg = [self imageFromSampleBuffer:sampleBuffer];
 }
 
@@ -138,19 +139,19 @@
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     // Lock the base address of the pixel buffer
     CVPixelBufferLockBaseAddress(imageBuffer, 0);
-    
+
     // Get the number of bytes per row for the pixel buffer
     void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
-    
+
     // Get the number of bytes per row for the pixel buffer
     size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
     // Get the pixel buffer width and height
     size_t width = CVPixelBufferGetWidth(imageBuffer);
     size_t height = CVPixelBufferGetHeight(imageBuffer);
-    
+
     // Create a device-dependent RGB color space
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    
+
     // Create a bitmap graphics context with the sample buffer data
     CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
                                                  bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
@@ -158,17 +159,17 @@
     CGImageRef quartzImage = CGBitmapContextCreateImage(context);
     // Unlock the pixel buffer
     CVPixelBufferUnlockBaseAddress(imageBuffer,0);
-    
+
     // Free up the context and color space
     CGContextRelease(context);
     CGColorSpaceRelease(colorSpace);
-    
+
     // Create an image object from the Quartz image
     UIImage *image = [UIImage imageWithCGImage:quartzImage];
-    
+
     // Release the Quartz image
     CGImageRelease(quartzImage);
-    
+
     return (image);
 }
 
