@@ -7,13 +7,16 @@
 //
 
 #import "CaptureSessionManager.h"
-#import <ImageIO/ImageIO.h>
+//#import <ImageIO/ImageIO.h>
 #import "AROverlayViewController.h"
+#import "ImageHandler.h"
 
 @implementation CaptureSessionManager {
     AVCaptureDevice *device;
     AVCaptureVideoDataOutput *videoOutput;
     AVCaptureConnection *connection;
+    
+    ImageHandler *imageHandler;
 
     UIImage *capturedImg;
 }
@@ -31,6 +34,8 @@
 
         self.captureSession = session;
     }
+    
+    imageHandler = [[ImageHandler alloc]init];
 
     return self;
 }
@@ -94,7 +99,7 @@
 
     [self.viewController addLabel];
 
-    capturedImg = [self imageFromSampleBuffer:sampleBuffer];
+    capturedImg = [imageHandler imageFromSampleBuffer:sampleBuffer];
 }
 
 - (BOOL)setVideoOrientation {

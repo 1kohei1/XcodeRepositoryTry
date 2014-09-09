@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		194DF6EA19BE95E80073A611 /* ImageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DF6E919BE95E80073A611 /* ImageHandler.m */; };
+		194DF6EC19BE9B4F0073A611 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 194DF6EB19BE9B4F0073A611 /* libstdc++.6.0.9.dylib */; };
+		194DF6EE19BE9C010073A611 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 194DF6ED19BE9C010073A611 /* tessdata */; };
+		194DF6F019BE9C130073A611 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194DF6EF19BE9C130073A611 /* CoreImage.framework */; };
 		19B4C57019B4B4DF009AD5DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */; };
 		19B4C57219B4B4EA009AD5DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */; };
 		19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */; };
@@ -28,6 +31,7 @@
 		19CD1F5E19A67CBF00E8C70F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CD1F4019A67CBF00E8C70F /* UIKit.framework */; };
 		19CD1F6619A67CBF00E8C70F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19CD1F6419A67CBF00E8C70F /* InfoPlist.strings */; };
 		19CD1F6819A67CBF00E8C70F /* XcodeRepositoryTryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CD1F6719A67CBF00E8C70F /* XcodeRepositoryTryTests.m */; };
+		DE54410B088E4F5B8896999D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D968A0169A24B9C991C151B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,9 @@
 /* Begin PBXFileReference section */
 		194DF6E819BE95E80073A611 /* ImageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHandler.h; sourceTree = "<group>"; };
 		194DF6E919BE95E80073A611 /* ImageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHandler.m; sourceTree = "<group>"; };
+		194DF6EB19BE9B4F0073A611 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		194DF6ED19BE9C010073A611 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		194DF6EF19BE9C130073A611 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		19B4C57319B4B553009AD5DD /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
@@ -70,6 +77,8 @@
 		19CD1F6319A67CBF00E8C70F /* XcodeRepositoryTryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XcodeRepositoryTryTests-Info.plist"; sourceTree = "<group>"; };
 		19CD1F6519A67CBF00E8C70F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		19CD1F6719A67CBF00E8C70F /* XcodeRepositoryTryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XcodeRepositoryTryTests.m; sourceTree = "<group>"; };
+		6D968A0169A24B9C991C151B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF84C9CADA9440498B02A3C8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +86,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194DF6F019BE9C130073A611 /* CoreImage.framework in Frameworks */,
+				194DF6EC19BE9B4F0073A611 /* libstdc++.6.0.9.dylib in Frameworks */,
 				19B4C58019B4EC1A009AD5DD /* ImageIO.framework in Frameworks */,
 				19B4C57219B4B4EA009AD5DD /* AVFoundation.framework in Frameworks */,
 				19B4C57019B4B4DF009AD5DD /* CoreMedia.framework in Frameworks */,
 				19CD1F3F19A67CBF00E8C70F /* CoreGraphics.framework in Frameworks */,
 				19CD1F4119A67CBF00E8C70F /* UIKit.framework in Frameworks */,
 				19CD1F3D19A67CBF00E8C70F /* Foundation.framework in Frameworks */,
+				DE54410B088E4F5B8896999D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +118,7 @@
 				19CD1F6119A67CBF00E8C70F /* XcodeRepositoryTryTests */,
 				19CD1F3B19A67CBF00E8C70F /* Frameworks */,
 				19CD1F3A19A67CBF00E8C70F /* Products */,
+				BF84C9CADA9440498B02A3C8 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +134,8 @@
 		19CD1F3B19A67CBF00E8C70F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				194DF6EF19BE9C130073A611 /* CoreImage.framework */,
+				194DF6EB19BE9B4F0073A611 /* libstdc++.6.0.9.dylib */,
 				19B4C57F19B4EC1A009AD5DD /* ImageIO.framework */,
 				19B4C57D19B4EB4E009AD5DD /* QuartzCore.framework */,
 				19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */,
@@ -129,6 +144,7 @@
 				19CD1F3E19A67CBF00E8C70F /* CoreGraphics.framework */,
 				19CD1F4019A67CBF00E8C70F /* UIKit.framework */,
 				19CD1F5B19A67CBF00E8C70F /* XCTest.framework */,
+				6D968A0169A24B9C991C151B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +152,7 @@
 		19CD1F4219A67CBF00E8C70F /* XcodeRepositoryTry */ = {
 			isa = PBXGroup;
 			children = (
+				194DF6ED19BE9C010073A611 /* tessdata */,
 				19CD1F4B19A67CBF00E8C70F /* AppDelegate.h */,
 				19CD1F4C19A67CBF00E8C70F /* AppDelegate.m */,
 				19CD1F4E19A67CBF00E8C70F /* Main.storyboard */,
@@ -189,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19CD1F6B19A67CBF00E8C70F /* Build configuration list for PBXNativeTarget "XcodeRepositoryTry" */;
 			buildPhases = (
+				D419F72AD7D84B478572365A /* Check Pods Manifest.lock */,
 				19CD1F3519A67CBF00E8C70F /* Sources */,
 				19CD1F3619A67CBF00E8C70F /* Frameworks */,
 				19CD1F3719A67CBF00E8C70F /* Resources */,
+				62A0F1D104144BCABE03B3A7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,6 +282,7 @@
 				19B4C57B19B4C303009AD5DD /* overlaygraphic.png in Resources */,
 				19CD1F4719A67CBF00E8C70F /* InfoPlist.strings in Resources */,
 				19CD1F5019A67CBF00E8C70F /* Main.storyboard in Resources */,
+				194DF6EE19BE9C010073A611 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +295,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62A0F1D104144BCABE03B3A7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D419F72AD7D84B478572365A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19CD1F3519A67CBF00E8C70F /* Sources */ = {
@@ -407,17 +460,19 @@
 		};
 		19CD1F6C19A67CBF00E8C70F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF84C9CADA9440498B02A3C8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XcodeRepositoryTry/XcodeRepositoryTry-Prefix.pch";
 				INFOPLIST_FILE = "XcodeRepositoryTry/XcodeRepositoryTry-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -425,17 +480,19 @@
 		};
 		19CD1F6D19A67CBF00E8C70F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF84C9CADA9440498B02A3C8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XcodeRepositoryTry/XcodeRepositoryTry-Prefix.pch";
 				INFOPLIST_FILE = "XcodeRepositoryTry/XcodeRepositoryTry-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
