@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // Set up capture manager
     self.captureManager = [[CaptureSessionManager alloc]init];
     if (![self.captureManager setDevice]) return; // Do error handling
@@ -34,11 +34,24 @@
     if (![self.captureManager setVideoOutput]) return; // Do error handling
     if (![self.captureManager setVideoOrientation]) return; // Do error handling
     [self.captureManager setVideoPreviewLayer:self.view.layer.bounds];
+    [self.captureManager setViewController:self];
     [self.view.layer addSublayer:self.captureManager.previewLayer];
+
+    self.view.tag = 100;
 
     // Capture screen touch
     [self captureScreenTouch];
-    
+
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 50)];
+    label.textColor = [UIColor redColor];
+    label.text = @"HELLO";
+    label.font = [UIFont systemFontOfSize:18];
+    label.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:label];
+
+
+
+
     [[[self captureManager] captureSession] startRunning];
 }
 
@@ -56,6 +69,8 @@
 }
 
 - (void)screenTouched:(UIButton *)button {
+    NSLog(@"screen touched");
+    [self addLabel];
     /*
     UIImage *capturedImg = [self.captureManager returnCapturedImg];
 
@@ -64,6 +79,18 @@
     
     [self.view addSubview:imageview];
      */
+}
+
+- (void)addLabel {
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(50, 50, 100, 50)];
+    label.text = @"HELLO";
+    label.textColor = [UIColor redColor];
+
+    [self.view addSubview:label];
+}
+
+- (int)returnNum {
+    return 10;
 }
 
 - (void)didReceiveMemoryWarning

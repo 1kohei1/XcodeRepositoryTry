@@ -13,4 +13,7 @@
 
 @property (retain) CaptureSessionManager *captureManager;
 
+- (void)addLabel;
+- (int)returnNum;
+
 @end
