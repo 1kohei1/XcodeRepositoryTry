@@ -11,6 +11,9 @@
 		194DF6EC19BE9B4F0073A611 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 194DF6EB19BE9B4F0073A611 /* libstdc++.6.0.9.dylib */; };
 		194DF6EE19BE9C010073A611 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 194DF6ED19BE9C010073A611 /* tessdata */; };
 		194DF6F019BE9C130073A611 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194DF6EF19BE9C130073A611 /* CoreImage.framework */; };
+		194DF6F419BEA1F80073A611 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C57D19B4EB4E009AD5DD /* QuartzCore.framework */; };
+		194DF73819C011180073A611 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DF73719C011180073A611 /* UserDataManager.m */; };
+		194DF73B19C011220073A611 /* ImageDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DF73A19C011220073A611 /* ImageDataManager.m */; };
 		19B4C57019B4B4DF009AD5DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */; };
 		19B4C57219B4B4EA009AD5DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */; };
 		19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */; };
@@ -50,6 +53,10 @@
 		194DF6EB19BE9B4F0073A611 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		194DF6ED19BE9C010073A611 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		194DF6EF19BE9C130073A611 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		194DF73619C011180073A611 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
+		194DF73719C011180073A611 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
+		194DF73919C011220073A611 /* ImageDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDataManager.h; sourceTree = "<group>"; };
+		194DF73A19C011220073A611 /* ImageDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDataManager.m; sourceTree = "<group>"; };
 		19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		19B4C57319B4B553009AD5DD /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
@@ -86,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194DF6F419BEA1F80073A611 /* QuartzCore.framework in Frameworks */,
 				194DF6F019BE9C130073A611 /* CoreImage.framework in Frameworks */,
 				194DF6EC19BE9B4F0073A611 /* libstdc++.6.0.9.dylib in Frameworks */,
 				19B4C58019B4EC1A009AD5DD /* ImageIO.framework in Frameworks */,
@@ -162,6 +170,10 @@
 				19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */,
 				194DF6E819BE95E80073A611 /* ImageHandler.h */,
 				194DF6E919BE95E80073A611 /* ImageHandler.m */,
+				194DF73919C011220073A611 /* ImageDataManager.h */,
+				194DF73A19C011220073A611 /* ImageDataManager.m */,
+				194DF73619C011180073A611 /* UserDataManager.h */,
+				194DF73719C011180073A611 /* UserDataManager.m */,
 				19CD1F5419A67CBF00E8C70F /* Images.xcassets */,
 				19CD1F4319A67CBF00E8C70F /* Supporting Files */,
 			);
@@ -334,6 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194DF73B19C011220073A611 /* ImageDataManager.m in Sources */,
+				194DF73819C011180073A611 /* UserDataManager.m in Sources */,
 				194DF6EA19BE95E80073A611 /* ImageHandler.m in Sources */,
 				19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */,
 				19CD1F4D19A67CBF00E8C70F /* AppDelegate.m in Sources */,
@@ -393,7 +407,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -422,6 +436,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -431,7 +446,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -453,6 +468,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -472,7 +488,6 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
-				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -492,7 +507,6 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
-				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
