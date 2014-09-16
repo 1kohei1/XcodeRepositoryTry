@@ -10,4 +10,6 @@
 
 @interface ImageDataManager : NSObject
 
+- (NSArray *)getFoodImgName:(NSString *)recognizedCharacters;
+
 @end

@@ -25,7 +25,6 @@
 }
 
 - (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer {
-    
     // Get a CMSampleBuffer's Core Video image buffer for the media data
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     // Lock the base address of the pixel buffer

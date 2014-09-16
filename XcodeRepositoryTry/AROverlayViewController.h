@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "CaptureSessionManager.h"
 
 @interface AROverlayViewController : UIViewController
 
 @property (retain) CaptureSessionManager *captureManager;
+@property CGRect OCRArea;
 
-- (void)addLabel;
-- (int)returnNum;
+- (void)displayFoodImg:(NSArray *)foodImgNames;
 
 @end

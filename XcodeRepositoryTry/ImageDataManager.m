@@ -10,4 +10,11 @@
 
 @implementation ImageDataManager
 
+- (NSArray *)getFoodImgName:(NSString *)recognizedCharacters {
+    // match recognized characters to database
+    return [[NSArray alloc]initWithObjects:recognizedCharacters, nil];
+}
+
+// method to match characters to menu items saved in database.
+
 @end
