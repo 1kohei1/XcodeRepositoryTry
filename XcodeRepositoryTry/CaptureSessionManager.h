@@ -15,6 +15,7 @@
 @property (retain) AVCaptureSession *captureSession;
 @property (retain) AVCaptureVideoPreviewLayer *previewLayer;
 @property AROverlayViewController *viewController;
+@property BOOL shouldCaptureRecord;
 
 // Configuration
 

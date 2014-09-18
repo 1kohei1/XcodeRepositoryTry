@@ -13,7 +13,7 @@
 @interface AROverlayViewController : UIViewController
 
 @property (retain) CaptureSessionManager *captureManager;
-@property CGRect OCRArea;
+@property CGRect OCRLabelFrame;
 
 - (void)displayFoodImg:(NSArray *)foodImgNames;
 

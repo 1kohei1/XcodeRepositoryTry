@@ -54,7 +54,7 @@
     if (error) {
         // The device does not accept change
     } else {
-        [device setActiveVideoMinFrameDuration:CMTimeMake(1, 3)];
+        [device setActiveVideoMinFrameDuration:CMTimeMake(1, 10)];
         [device unlockForConfiguration];
     }
 
@@ -99,10 +99,12 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     capturedImg = [imageHandler imageFromSampleBuffer:sampleBuffer];
-    NSString *recognizedCharacters = [imageHandler recognizedLettersFromImage:capturedImg setRect:self.viewController.OCRArea];
-    
-    NSArray *foodImgName = [imageDataManager getFoodImgName:recognizedCharacters];
-    [self.viewController displayFoodImg:foodImgName];
+    if (self.shouldCaptureRecord) {
+        NSString *recognizedCharacters = [imageHandler recognizedLettersFromImage:capturedImg setRect:self.viewController.OCRLabelFrame];
+        
+        NSArray *foodImgName = [imageDataManager getFoodImgName:recognizedCharacters];
+        [self.viewController displayFoodImg:foodImgName];
+    }
 }
 
 - (BOOL)setVideoOrientation {
