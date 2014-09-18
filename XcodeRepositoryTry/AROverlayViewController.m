@@ -222,12 +222,7 @@ static const float DOT_LENGTH = 30.0;
 }
 
 - (CGRect)fetchOCRAreaFrame {
-    // fetch through core data
     return CGRectMake(50, 100, 220, 50);
-}
-
-- (void)saveOCRAreaFrame:(CGRect) OCRAreaFrame {
-    
 }
 
 - (void)displayFoodImg:(NSArray *)foodImgNames {
