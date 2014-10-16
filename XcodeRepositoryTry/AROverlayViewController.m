@@ -89,18 +89,22 @@ static const float DOT_LENGTH = 30.0;
 }
 
 - (void)createDisplayArea {
-    CGRect viewFrame = self.view.frame;
-    CGRect displayFrame = CGRectMake(0, viewFrame.size.height - 100, viewFrame.size.width, 100);
+    CGSize viewSize = self.view.frame.size;
     
-    UILabel *label = [[UILabel alloc]initWithFrame:displayFrame];
-    label.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
+    CGRect topLabelFrame = CGRectMake(0, 0, viewSize.width, 50);
+    CGRect bottomLabelFrame = CGRectMake(0, 250, viewSize.width, viewSize.height - 250);
+    CGRect ocrFrame = CGRectMake(0, 0, viewSize.width, 200);
+//    self.OCRLabelFrame = ocrFrame;
     
-    CGRect labelFrame = CGRectMake(20, viewFrame.size.height - 20 - 60, viewFrame.size.width - 20 - 40, 60);
-    foodImgNameLabel = [[UILabel alloc]initWithFrame:labelFrame];
+    UILabel *topLabel = [[UILabel alloc]initWithFrame:topLabelFrame];
+    foodImgNameLabel = [[UILabel alloc]initWithFrame:bottomLabelFrame];
+    
+    topLabel.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
+    foodImgNameLabel.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
     foodImgNameLabel.font = [UIFont systemFontOfSize:20];
-    foodImgNameLabel.textAlignment = NSTextAlignmentCenter;
+    foodImgNameLabel.numberOfLines = 10;
     
-    [self.view addSubview:label];
+    [self.view addSubview:topLabel];
     [self.view addSubview:foodImgNameLabel];
 }
 
