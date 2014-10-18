@@ -7,6 +7,7 @@
 //
 
 #import "ImageHandler.h"
+#import <opencv2/imgcodecs/ios.h>
 
 
 @implementation ImageHandler {
@@ -23,6 +24,11 @@
     [tesseractInstance setVariableValue:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" forKey:@"tessedit_char_whitelist"];
 
     return self;
+}
+
+- (void)sampleMethod:(UIImage *) image {
+    cv::Mat imageMat;
+    UIImageToMat(image, imageMat);
 }
 
 - (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer {

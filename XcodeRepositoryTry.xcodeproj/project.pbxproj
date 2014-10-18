@@ -14,6 +14,8 @@
 		194DF6F419BEA1F80073A611 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C57D19B4EB4E009AD5DD /* QuartzCore.framework */; };
 		194DF73819C011180073A611 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DF73719C011180073A611 /* UserDataManager.m */; };
 		194DF73B19C011220073A611 /* ImageDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DF73A19C011220073A611 /* ImageDataManager.m */; };
+		1970156119F2B1860006433F /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1970156019F2B1860006433F /* opencv2.framework */; };
+		1970156319F2B21E0006433F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1970156219F2B21E0006433F /* AssetsLibrary.framework */; };
 		19B4C57019B4B4DF009AD5DD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */; };
 		19B4C57219B4B4EA009AD5DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */; };
 		19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */; };
@@ -57,6 +59,10 @@
 		194DF73719C011180073A611 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
 		194DF73919C011220073A611 /* ImageDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDataManager.h; sourceTree = "<group>"; };
 		194DF73A19C011220073A611 /* ImageDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDataManager.m; sourceTree = "<group>"; };
+		1970152B19F07A420006433F /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Downloads/opencv2.framework; sourceTree = "<group>"; };
+		1970156019F2B1860006433F /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../OpenCV/ios/opencv2.framework; sourceTree = "<group>"; };
+		1970156219F2B21E0006433F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		1970156419F2C3C20006433F /* OpenCVConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVConstants.h; sourceTree = "<group>"; };
 		19B4C56F19B4B4DF009AD5DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		19B4C57119B4B4EA009AD5DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		19B4C57319B4B553009AD5DD /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
@@ -93,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1970156319F2B21E0006433F /* AssetsLibrary.framework in Frameworks */,
+				1970156119F2B1860006433F /* opencv2.framework in Frameworks */,
 				194DF6F419BEA1F80073A611 /* QuartzCore.framework in Frameworks */,
 				194DF6F019BE9C130073A611 /* CoreImage.framework in Frameworks */,
 				194DF6EC19BE9B4F0073A611 /* libstdc++.6.0.9.dylib in Frameworks */,
@@ -142,6 +150,9 @@
 		19CD1F3B19A67CBF00E8C70F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1970156219F2B21E0006433F /* AssetsLibrary.framework */,
+				1970156019F2B1860006433F /* opencv2.framework */,
+				1970152B19F07A420006433F /* opencv2.framework */,
 				194DF6EF19BE9C130073A611 /* CoreImage.framework */,
 				194DF6EB19BE9B4F0073A611 /* libstdc++.6.0.9.dylib */,
 				19B4C57F19B4EC1A009AD5DD /* ImageIO.framework */,
@@ -161,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				194DF6ED19BE9C010073A611 /* tessdata */,
+				1970156419F2C3C20006433F /* OpenCVConstants.h */,
 				19CD1F4B19A67CBF00E8C70F /* AppDelegate.h */,
 				19CD1F4C19A67CBF00E8C70F /* AppDelegate.m */,
 				19CD1F4E19A67CBF00E8C70F /* Main.storyboard */,
@@ -422,6 +434,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -436,6 +449,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				SDKROOT = iphoneos;
 			};
@@ -461,6 +475,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -468,6 +483,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -480,6 +496,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/koheiarai/Downloads,
+					/Users/koheiarai/Desktop/OpenCV/ios,
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XcodeRepositoryTry/XcodeRepositoryTry-Prefix.pch";
 				INFOPLIST_FILE = "XcodeRepositoryTry/XcodeRepositoryTry-Info.plist";
@@ -499,6 +522,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/koheiarai/Downloads,
+					/Users/koheiarai/Desktop/OpenCV/ios,
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XcodeRepositoryTry/XcodeRepositoryTry-Prefix.pch";
 				INFOPLIST_FILE = "XcodeRepositoryTry/XcodeRepositoryTry-Info.plist";
