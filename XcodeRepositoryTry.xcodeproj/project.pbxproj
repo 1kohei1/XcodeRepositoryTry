@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		194DF6EA19BE95E80073A611 /* ImageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 194DF6E919BE95E80073A611 /* ImageHandler.m */; };
+		194DF6EA19BE95E80073A611 /* ImageHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 194DF6E919BE95E80073A611 /* ImageHandler.mm */; };
 		194DF6EC19BE9B4F0073A611 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 194DF6EB19BE9B4F0073A611 /* libstdc++.6.0.9.dylib */; };
 		194DF6EE19BE9C010073A611 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 194DF6ED19BE9C010073A611 /* tessdata */; };
 		194DF6F019BE9C130073A611 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194DF6EF19BE9C130073A611 /* CoreImage.framework */; };
@@ -51,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		194DF6E819BE95E80073A611 /* ImageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHandler.h; sourceTree = "<group>"; };
-		194DF6E919BE95E80073A611 /* ImageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHandler.m; sourceTree = "<group>"; };
+		194DF6E919BE95E80073A611 /* ImageHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageHandler.mm; sourceTree = "<group>"; };
 		194DF6EB19BE9B4F0073A611 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		194DF6ED19BE9C010073A611 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		194DF6EF19BE9C130073A611 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -181,7 +181,7 @@
 				19B4C57319B4B553009AD5DD /* CaptureSessionManager.h */,
 				19B4C57419B4B553009AD5DD /* CaptureSessionManager.m */,
 				194DF6E819BE95E80073A611 /* ImageHandler.h */,
-				194DF6E919BE95E80073A611 /* ImageHandler.m */,
+				194DF6E919BE95E80073A611 /* ImageHandler.mm */,
 				194DF73919C011220073A611 /* ImageDataManager.h */,
 				194DF73A19C011220073A611 /* ImageDataManager.m */,
 				194DF73619C011180073A611 /* UserDataManager.h */,
@@ -360,7 +360,7 @@
 			files = (
 				194DF73B19C011220073A611 /* ImageDataManager.m in Sources */,
 				194DF73819C011180073A611 /* UserDataManager.m in Sources */,
-				194DF6EA19BE95E80073A611 /* ImageHandler.m in Sources */,
+				194DF6EA19BE95E80073A611 /* ImageHandler.mm in Sources */,
 				19B4C57519B4B553009AD5DD /* CaptureSessionManager.m in Sources */,
 				19CD1F4D19A67CBF00E8C70F /* AppDelegate.m in Sources */,
 				19CD1F4919A67CBF00E8C70F /* main.m in Sources */,

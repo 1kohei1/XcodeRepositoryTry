@@ -13,7 +13,11 @@
 
 @interface ImageHandler : NSObject <TesseractDelegate>
 
+@property UIImage *capturedImage;
+@property NSString *recognizedLetters;
+
 - (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer;
-- (NSString *)recognizedLettersFromImage:(UIImage *) image setRect:(CGRect)rect;
+- (void)processImage;
+- (UIImage *)getEditedImage;
 
 @end

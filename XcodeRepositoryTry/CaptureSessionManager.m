@@ -11,6 +11,10 @@
 #import "ImageHandler.h"
 #import "ImageDataManager.h"
 
+// Macros for time measurements
+#define TICK NSDate *startTime = [NSDate date]
+#define TOCK NSLog(@"%s Time: %f", __func__, -[startTime timeIntervalSinceNow])
+
 @implementation CaptureSessionManager {
     AVCaptureDevice *device;
     AVCaptureVideoDataOutput *videoOutput;
@@ -99,11 +103,14 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     capturedImg = [imageHandler imageFromSampleBuffer:sampleBuffer];
+    
     if (self.shouldCaptureRecord) {
-        NSString *recognizedCharacters = [imageHandler recognizedLettersFromImage:capturedImg setRect:self.viewController.OCRLabelFrame];
+        [imageHandler setCapturedImage:capturedImg];
+        [imageHandler processImage];
+        NSString *recognizedLetters = imageHandler.recognizedLetters;
         
-        NSArray *foodImgName = [imageDataManager getFoodImgName:recognizedCharacters];
-        [self.viewController displayFoodImg:foodImgName];
+//        NSArray *foodImgName = [imageDataManager getFoodImgName:recognizedLetters];
+//        [self.viewController displayFoodImg:foodImgName];
     }
 }
 
@@ -137,8 +144,8 @@
 
 // Methods
 
-- (UIImage *)returnCapturedImg {
-    return capturedImg;
+- (UIImage *)getCapturedImg {
+    return [imageHandler getEditedImage];
 }
 
 @end

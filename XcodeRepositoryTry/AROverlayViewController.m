@@ -113,6 +113,13 @@ static const float DOT_LENGTH = 30.0;
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     touchPoint = [touch locationInView:self.view];
+    
+    // Check image processing
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.view.frame];
+    imageView.image = [self.captureManager getCapturedImg];
+    [self.view addSubview:imageView];
+    
+    [self.captureManager setShouldCaptureRecord:NO];
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {

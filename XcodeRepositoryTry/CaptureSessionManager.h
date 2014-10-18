@@ -26,6 +26,6 @@
 - (void)setVideoPreviewLayer:(CGRect)layerRect;
 
 // Methods
-- (UIImage *)returnCapturedImg;
+- (UIImage *)getCapturedImg;
 
 @end
